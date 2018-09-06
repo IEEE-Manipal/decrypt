@@ -1,0 +1,230 @@
+/* =============================================================================
+   HTML5 CSS Reset Minified - Eric Meyer
+   ========================================================================== */
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+li{list-style:none}
+
+
+/* =============================================================================
+   My CSS
+   ========================================================================== */
+
+/* ---- base ---- */
+
+html,body{ 
+	width:100%;
+	height:100%;
+	
+}
+
+
+
+body{
+  font:normal 75% Arial, Helvetica, sans-serif;
+}
+
+canvas{
+  display:block;
+  vertical-align:bottom;
+}
+
+/*----------button-----------*/
+.button {
+      background-color: transparent;
+      border:3px solid white;
+      border-radius:  2px;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 4px;
+      cursor: pointer;
+    }
+    
+.button:active{
+  background-color: white; 
+}
+/*____________________________________*/
+/* --------- background ------------- */
+
+body , #particles-js {
+  width: 100wh;
+  height: 100%;
+  color: #fff;
+  background: linear-gradient(-45deg, #000000, #3A3B3A, #0D1B5C, #020933);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+
+/*______________________________________*/
+
+
+/* ---- particles.js container ---- */
+
+
+#div1{
+  position: absolute; left: 50%; top: 40%; transform: translate(-50%,-50%); color: white; display: none; font-size: 5em ; font-family: roboto; z-index: 1; padding-bottom: 15px; 
+}
+
+#login{
+  position: absolute; left: 35%; top: 60%; transform: translate(-50%,-50%);  font-size: 3em; display: none; width: 300px;
+}
+
+#register{
+  position: absolute; left: 65%; top: 60%; transform: translate(-50%,-50%); font-size: 3em; display: none; z-index: 1; width: 300px;
+}
+
+.button1{
+   position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);   font-size: 3em; display: block; 
+}
+
+#particles-js{
+  width: 100%;
+  height: 100%;
+  
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+}
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 1089px){
+  #div1{
+    top: 30%;
+  }
+  #login{
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);  font-size: 3em; display: none; width: 300px;
+}
+
+#register{
+  position: absolute; left: 50%; top: 75%; transform: translate(-50%,-50%); font-size: 3em; display: none; z-index: 1; width: 300px;
+
+}
+
+
+}
+
+@media(max-width: 975px){
+  #div1{
+    font-size: 4em;
+  }  
+
+
+}
+
+
+
+@media(max-width: 975px){
+  
+  #div1{
+    font-size: 1.8em;
+    top: 40%;
+  } 
+
+  #login{
+  left: 50%; top: 60%; transform: translate(-50%,-50%); font-size: 1em; width: 300px;
+  }
+
+#register{
+  left: 50%; top: 75%; transform: translate(-50%,-50%); font-size: 1em; width: 300px;
+
+  }
+}
+  @media(max-width: 351px){
+
+#div1{
+  position: absolute; left: 50%; top: 40%; transform: translate(-50%,-50%); color: white; display: none; font-size: 1em ; font-family: roboto; z-index: 100; padding-bottom: 15px; 
+}
+
+#login{
+  position: absolute; left: 50%; top: 60%; transform: translate(-50%,-50%);  font-size: .8em; display: none; width: 40%;
+}
+
+#register{
+  position: absolute; left: 50%; top: 80%; transform: translate(-50%,-50%); font-size: .8em; display: none; z-index: 1; width: 40%;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
