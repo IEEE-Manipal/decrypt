@@ -151,10 +151,10 @@
         <div class="col-lg-4 col-xs-0">
         </div>
         <div class="col-lg-4 col-xs-12">
-   <h1 align="center" class="heading" style="color: white; font-size: 35px; font-weight: bold">SPOTLIGHT 2.0</h1>
+   <h1 align="center" class="heading" style="color: white; font-size: 35px; font-weight: bold">D Ǝ C R Y P T</h1>
    <div class="tab-content">
 <div class="borderreg"> 
-                    <form action="regcheck.php" method="post" style="padding-top: 3%; padding-bottom: 2%">
+                    <form action="regcheck.php" method="get" style="padding-top: 3%; padding-bottom: 2%">
                         <div class="form-group" style="padding-left: 12%">
                         <label style="color: white; font-size: 17px" >Name :</label><input type="text" class="form-control" style="width: 85%" placeholder="Enter name" name="username">
                         

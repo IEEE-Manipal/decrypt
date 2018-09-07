@@ -32,10 +32,10 @@
 		header("Location: register.php?err=8");
 	else if(strlen($pass)<6)
 		header("Location: register.php?err=9");
-	// else if(!check_captcha())
-	// 		{
-	// 			header("Location: login.php?success=-1&err=11&regerr=1");
-	// 		}	
+	else if(!check_captcha())
+	{
+		header("Location: register.php?err=11");
+	}	
 
 	else{
 		

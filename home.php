@@ -9,8 +9,8 @@ include("session.php");
 	$that_query="SELECT UID,name FROM login WHERE UID=$uid";
 	$that_result=mysqli_query($connection,$that_query);
 	$that_row=mysqli_fetch_assoc($that_result);
-	if($status_row['status']==27)
-		header("Location: win.php");
+	if($status_row['status']==29)
+		header("Location: win.html");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -240,7 +240,7 @@ include("session.php");
 															echo "<tr>";
 															echo "<td>{$rank}</td>";
 															echo "<td>{$leader_row['UID']}</td>";
-															if($leader_row['status']==27)
+															if($leader_row['status']==29)
 																echo "<td>COMPLETED</td>";
 															else
 																echo "<td>{$leader_row['status']}</td>";

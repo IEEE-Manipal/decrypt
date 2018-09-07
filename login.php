@@ -209,7 +209,7 @@
 		<div id="info"><div class="col-lg-4 col-xs-0">
         </div>
         <div class="col-lg-4 col-xs-12">
-   <h1 align="center" class="heading" style="color: white; font-size: 35px; font-weight: bold">DƎCRYPT</h1>
+   <h1 align="center" class="heading" style="color: white; font-size: 35px; font-weight: bold">D Ǝ C R Y P T</h1>
 <div class="border">
     <?php 
             if($_GET['success']==1)
