@@ -3,11 +3,11 @@
 ?>
 <?php
 
-	$name=mysqli_real_escape_string($connection,$_GET["username"]);
-	$reg=mysqli_real_escape_string($connection,$_GET["regno"]);
-	$mail=mysqli_real_escape_string($connection,$_GET["email"]);
-	$pass=mysqli_real_escape_string($connection,$_GET["password"]);
-	$num=mysqli_real_escape_string($connection,$_GET["num"]);
+	$name=mysqli_real_escape_string($connection,$_POST["username"]);
+	$reg=mysqli_real_escape_string($connection,$_POST["regno"]);
+	$mail=mysqli_real_escape_string($connection,$_POST["email"]);
+	$pass=mysqli_real_escape_string($connection,$_POST["password"]);
+	$num=mysqli_real_escape_string($connection,$_POST["num"]);
 	$uid_query="SELECT UID FROM login WHERE UID='$reg'";
 	$uid_result=mysqli_query($connection,$uid_query);
 	$uid_row=mysqli_fetch_assoc($uid_result);
@@ -50,19 +50,19 @@ function check_captcha()
 {
 
 
-	$response = $_GET["g-recaptcha-response"];
-	if(strlen($_GET["g-recaptcha-response"])==0)
+	$response = $_POST["g-recaptcha-response"];
+	if(strlen($_POST["g-recaptcha-response"])==0)
 	{
 		return false;
 	}
 	$url = 'https://www.google.com/recaptcha/api/siteverify';
 	$data = array(
 		'secret' => '6Le82m4UAAAAAEpnV_2p2YFw82IgzetJJCvo9pFl',
-		'response' => $_GET["g-recaptcha-response"]
+		'response' => $_POST["g-recaptcha-response"]
 	);
 	$options = array(
 		'http' => array (
-			'method' => 'GET',
+			'method' => 'POST',
 			'content' => http_build_query($data)
 		)
 	);

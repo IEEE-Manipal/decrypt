@@ -5,20 +5,20 @@
     session_unset();
     session_destroy();
     session_start();
-    if(!isset($_GET['success']))
-            $_GET['success']=0;
+    if(!isset($_POST['success']))
+            $_POST['success']=0;
 	$errors=[];
 
 	$message="";
-        if (isset($_GET["submit"])) {
-        $user=trim($_GET["username"]);
-        $pass=trim($_GET["password"]);
+        if (isset($_POST["submit"])) {
+        $user=trim($_POST["username"]);
+        $pass=trim($_POST["password"]);
         $user=mysqli_real_escape_string($connection,$user);
         $pass=mysqli_real_escape_string($connection,$pass);
         
         $fields_required=["username","password"];
         foreach ($fields_required as $field) {
-            if(!has_presence(trim($_GET[$field]))){
+            if(!has_presence(trim($_POST[$field]))){
                 $errors[$field]= $field . " can't be empty";
             }
         }
@@ -212,7 +212,7 @@
    <h1 align="center" class="heading" style="color: white; font-size: 35px; font-weight: bold">D Ǝ C R Y P T</h1>
 <div class="border">
     <?php 
-            if($_GET['success']==1)
+            if($_POST['success']==1)
                 echo "
             <div class=\"alert alert-success\" >
                             <center>
@@ -223,7 +223,7 @@
     <div class="message">
         <?php echo $message; ?>
     </div>
-    <form action="login.php?success=0" class="form" method="GET">
+    <form action="login.php?success=0" class="form" method="POST">
         <div class="form-group" style="padding-left: 12%">
         <label class="label">User Id:</label><input type="text" name="username" class="form-control" style="width: 85%" placeholder="Enter Registration No." value="<?php echo $user; ?>">
         </div>
