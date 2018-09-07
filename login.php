@@ -5,8 +5,8 @@
     session_unset();
     session_destroy();
     session_start();
-    if(!isset($_POST['success']))
-            $_POST['success']=0;
+    if(!isset($_GET['success']))
+            $_GET['success']=0;
 	$errors=[];
 
 	$message="";
@@ -200,6 +200,22 @@
             	padding-top: 10%;
             	z-index: 10;
             }
+            .button {
+      background-color: transparent;
+      border:3px solid white;
+      border-radius:  2px;
+      color: white;
+      padding: 10px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+.button:active{
+  background-color: white; 
+}
   </style>
 </head>
 <body>
@@ -209,10 +225,10 @@
 		<div id="info"><div class="col-lg-4 col-xs-0">
         </div>
         <div class="col-lg-4 col-xs-12">
-   <h1 align="center" class="heading" style="color: white; font-size: 35px; font-weight: bold">D Ǝ C R Y P T</h1>
+   <h1 align="center" class="heading" style="color: white; font-size: 35px; font-weight: bold">D 3 C R Y P T</h1>
 <div class="border">
     <?php 
-            if($_POST['success']==1)
+            if($_GET['success']==1)
                 echo "
             <div class=\"alert alert-success\" >
                             <center>
@@ -232,16 +248,17 @@
         </div>
         <br />
     	<center>
-         <button class="btn btn-success" type="submit" name="submit" class="submit" value="Log in" style="width: 40%">LOGIN</button>   
-        </center>
+         <button class="button" type="submit" name="submit" class="submit" value="Log in">LOGIN</button><br><br>
+         </center>
     </form>
-    <br />
-    <div class="error">
+    <div class="error" style="padding-left: 10px;">
     <?php echo error_report($errors);?>
     </div>
+    <center>
+         <a href="register.php?err=0"><button class="button">Register</button></a>   
+        </center>
     <br>
 	<p style="display: inline-block; padding-left: 30px;">New User?</p>
-	<a href="register.php?err=0" style="display: inline-block; margin-left: 10px;"><button class="btn btn-warning">Register</button></a>
 	</div>
     </div>		
 	</div>

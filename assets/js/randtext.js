@@ -2,7 +2,7 @@
   		function randtext(id,x,flag)
   		{
             var container = $(id).get(0);
-            var textToWrite = 'DƎCRYPT';
+            var textToWrite = 'D3CRYPT';
             var i = 0;
             var progress = 0;
             var codingChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';

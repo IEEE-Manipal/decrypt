@@ -9,7 +9,7 @@ include("session.php");
 	$that_query="SELECT UID,name FROM login WHERE UID=$uid";
 	$that_result=mysqli_query($connection,$that_query);
 	$that_row=mysqli_fetch_assoc($that_result);
-	if($status_row['status']==29)
+	if($status_row['status']==30)
 		header("Location: win.html");
 ?>
 <!DOCTYPE html>
@@ -116,7 +116,7 @@ include("session.php");
                                <div class="ans">
                                 <h2>Answer</h2>
                                 </div>
-                                    <form action="processing.php" method="GET">
+                                    <form action="processing.php" method="POST">
                                     	<div class="form-group field col-lg-12">
                                         <input type="text" class="form-control" id="answer" placeholder="Enter Answer" name="ans">
                                     </div>
@@ -134,10 +134,9 @@ include("session.php");
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-lg-12 col-xs-12">
                       <div class="table table1">
-                            <h2>Questions Answered</h2>
-                              <p>Questions answered till now:</p>
+                            <h2 style="text-align: center;">Answer to special questions</h2>
                                   <table class="table table2">
-                                     <tbody class="">
+                                     <tbody style="color: black; font-size: 20px; text-align: center;">
                                        <?php
                                           $ieee_query="SELECT id,des FROM ieee";
                                           $ieee_result = mysqli_query($connection,$ieee_query);
@@ -148,13 +147,15 @@ include("session.php");
                                           for($i = 0;$i<8;$i++) {
                                             $ieee_row = mysqli_fetch_assoc($ieee_result);
                                             $msg = "not answered yet";
+                                            $color = "red";
                                             if($desc_num!=0) {
                                               $msg = $ieee_row['des'];
+                                              $color = "green";
                                               $desc_num-=1;
                                             }
                                             echo "<tr>";
                                             echo "<td> {$i} </td>";
-                                            echo "<td>{$msg}</td>";
+                                            echo "<td style='color: {$color}'>{$msg}</td>";
                                             echo "</tr>";
                                           }
                                        ?>
@@ -180,6 +181,15 @@ include("session.php");
                     <h3 class="modal-title">Rules</h3>
                   </div>
                   <div class="modal-body">
+                    <ul>
+                      <li>Questions cannot be skipped. Only after attempting all previous questions can a player attempt the next question.</li>
+                      <li>There is only one correct answer.</li>
+                      <li>Adhere to the topic mentioned with each answer while answering the question.</li>
+                      <li>You can attempt a question any number of times.</li>
+                      <li>Only the special question answers are visible to the player after he/she has answered those questions.</li>
+                      <li>The special question answers serve as clues to the final answer of the game.</li>
+                      <li>Hints will be updated regularly.</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -240,7 +250,7 @@ include("session.php");
 															echo "<tr>";
 															echo "<td>{$rank}</td>";
 															echo "<td>{$leader_row['UID']}</td>";
-															if($leader_row['status']==29)
+															if($leader_row['status']==30)
 																echo "<td>COMPLETED</td>";
 															else
 																echo "<td>{$leader_row['status']}</td>";

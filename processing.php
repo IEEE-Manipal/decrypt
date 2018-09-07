@@ -7,7 +7,7 @@
 	$status_result=mysqli_query($connection,$status_query);
 	$status_row=mysqli_fetch_assoc($status_result);
 
-	$answer=$_GET["ans"];
+	$answer=$_POST["ans"];
 	$state=$status_row["status"];
 	$answer_query="SELECT id FROM answers WHERE id='$state' AND answer='$answer'";
 	$answer_result=mysqli_query($connection,$answer_query);

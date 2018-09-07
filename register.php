@@ -140,6 +140,22 @@
               padding-top: 4%;
               z-index: 10;
             }
+            .button {
+      background-color: transparent;
+      border:3px solid white;
+      border-radius:  2px;
+      color: white;
+      padding: 10px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+.button:active{
+  background-color: white; 
+}
   </style>
   <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
@@ -151,7 +167,7 @@
         <div class="col-lg-4 col-xs-0">
         </div>
         <div class="col-lg-4 col-xs-12">
-   <h1 align="center" class="heading" style="color: white; font-size: 35px; font-weight: bold">D Ǝ C R Y P T</h1>
+   <h1 align="center" class="heading" style="color: white; font-size: 35px; font-weight: bold">D 3 C R Y P T</h1>
    <div class="tab-content">
 <div class="borderreg"> 
                     <form action="regcheck.php" method="post" style="padding-top: 3%; padding-bottom: 2%">
@@ -220,7 +236,7 @@
                         <div class="g-recaptcha" data-sitekey="6Le82m4UAAAAAFAqZQeiz9nPWOg9fgGypyeek3W2"></div>
                         <!-- </div> -->
                         <center>
-                        <button type="submit" class="btn btn-success" style="width: 40%">Submit</button>
+                        <button type="submit" class="button" style="width: 40%">Submit</button>
                         </center>
                     </form>
                 </div>
