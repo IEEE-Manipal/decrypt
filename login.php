@@ -138,7 +138,7 @@
             .message{
                 color: white;
                 font-weight: bold;
-                font-size: 25px;
+                font-size: 15px;
                 text-transform: uppercase;
                 text-align: center;
                 height: 10%;

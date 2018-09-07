@@ -1,5 +1,5 @@
 <?php
-         if(!isset($_POST['err']))
+         if(!isset($_GET['err']))
             header("Location: logout.php");
 ?>
 <!DOCTYPE html>
