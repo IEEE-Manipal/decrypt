@@ -86,6 +86,7 @@
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
   animation: Gradient 15s ease infinite;
+  font-family: Arial;
 }
 @-webkit-keyframes Gradient {
   0% {
@@ -225,7 +226,7 @@
 		<div id="info"><div class="col-lg-4 col-xs-0">
         </div>
         <div class="col-lg-4 col-xs-12">
-   <h1 align="center" class="heading" style="color: white; font-size: 35px; font-weight: bold">D 3 C R Y P T</h1>
+   <h1 align="center" class="heading" style="color: white; font-size: 35px; font-weight: bold">D Ǝ C R Y P T</h1>
 <div class="border">
     <?php 
             if($_GET['success']==1)
@@ -241,7 +242,7 @@
     </div>
     <form action="login.php?success=0" class="form" method="POST">
         <div class="form-group" style="padding-left: 12%">
-        <label class="label">User Id:</label><input type="text" name="username" class="form-control" style="width: 85%" placeholder="Enter Registration No." value="<?php echo $user; ?>">
+        <label class="label">Reg. No.:</label><input type="text" name="username" class="form-control" style="width: 85%" placeholder="Enter Registration No." value="<?php echo $user; ?>">
         </div>
         <div class="form-group" style="padding-left: 12%">
         <label class="label">Password:</label><input type="password" name="password" class="form-control" style="width: 85%" placeholder="Enter Password" value="">
@@ -258,7 +259,6 @@
          <a href="register.php?err=0"><button class="button">Register</button></a>   
         </center>
     <br>
-	<p style="display: inline-block; padding-left: 30px;">New User?</p>
 	</div>
     </div>		
 	</div>

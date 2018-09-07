@@ -1,5 +1,9 @@
 <?php
 include("session.php");
+if(!isset($_GET['ans'])) {
+  header("Location: logout.php");
+}
+
 ?>
 <?php 
 	$uid=$_SESSION["userid"];
@@ -40,7 +44,7 @@ include("session.php");
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span> 
 				      </button>
-	  				<button class="btn  navbar-btn button1">D3CRYPT</button>
+	  				<button class="btn  navbar-btn button1">DƎCRYPT</button>
 	  			</div>
 	  			 <div class="navbar-collapse collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-left">
@@ -86,13 +90,16 @@ include("session.php");
 							$question=$question_row['question'];
 							echo "<h3 style=\"color: black\">{$question}</h3>";
 							?>
-							<div class="row">
-								<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><img src="assets/images/<?php echo $img_row['img1']; ?>";" class="img-responsive" style="width: 100%" /></div>
-								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><img src="assets/images/<?php echo $img_row['img2']; ?>";" class="img-responsive" style="width: 100%" /></div>
-								<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-							</div>
+							<?php if($img_row['imgcount']>0) { ?>
+              <div class="row">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><img src="assets/images/<?php echo $img_row['img1']; ?>";" class="img-responsive" style="width: 100%" /></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><img src="assets/images/<?php echo $img_row['img2']; ?>";" class="img-responsive" style="width: 100%" /></div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+              </div>
+              <br>
+              <?php } ?>
 							<br>
 							<?php if ($img_row['imgcount']==3) { ?>
 							<div class="row">
@@ -134,7 +141,7 @@ include("session.php");
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-lg-12 col-xs-12">
                       <div class="table table1">
-                            <h2 style="text-align: center;">Answer to special questions</h2>
+                            <h2 style="text-align: center; padding-top: 10px;">Answer to special questions</h2>
                                   <table class="table table2">
                                      <tbody style="color: black; font-size: 20px; text-align: center;">
                                        <?php
@@ -145,6 +152,7 @@ include("session.php");
                                           $desc_row=mysqli_fetch_assoc($desc_result);
                                           $desc_num=$desc_row['count(*)'];
                                           for($i = 0;$i<8;$i++) {
+                                            $k=$i+1;
                                             $ieee_row = mysqli_fetch_assoc($ieee_result);
                                             $msg = "not answered yet";
                                             $color = "red";
@@ -154,7 +162,7 @@ include("session.php");
                                               $desc_num-=1;
                                             }
                                             echo "<tr>";
-                                            echo "<td> {$i} </td>";
+                                            echo "<td> {$k} </td>";
                                             echo "<td style='color: {$color}'>{$msg}</td>";
                                             echo "</tr>";
                                           }
