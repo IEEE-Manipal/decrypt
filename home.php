@@ -219,6 +219,7 @@ if(!isset($_GET['ans'])) {
                       <li>Only the special question answers are visible to the player after he/she has answered those questions.</li>
                       <li>The special question answers serve as clues to the final answer of the game.</li>
                       <li>Hints will be updated regularly.</li>
+                      <li>In case of multiple people completing all the questions only the top few will be shortlisted for the interview. Those qualified will be notified via mail.</li>
                     </ul>
                   </div>
                 </div>
