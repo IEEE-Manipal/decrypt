@@ -33,6 +33,21 @@ if(!isset($_GET['ans'])) {
     opacity: 0.8;
     width: 100%;
 }
+.button {
+      background-color: black;
+      border:3px solid white;
+      border-radius:  2px;
+      color: white;
+      padding: 10px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .button:active{
+  background-color: white; 
+}
   </style>
 </head>
 <body>
@@ -119,6 +134,13 @@ if(!isset($_GET['ans'])) {
 							<?php } ?>
                             <fieldset class="qinput"></fieldset>                       
                         </div>
+                        <center>
+                        <button class="button <?php if($question_row['hint']=="") echo "hidden"; ?>" data-toggle="collapse" data-target="#hint">HINT</button>
+          <div id="hint" class="collapse">
+            <h4 style="color: black"><?php echo ucfirst($question_row['hint']);  ?></h4>
+            <br />  
+          </div>
+        </center>
                         <div class="answer">
                                <div class="ans">
                                 <h2>Answer</h2>
