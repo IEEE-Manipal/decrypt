@@ -219,7 +219,7 @@
 }
   </style>
 </head>
-<body>
+<body onload="winmessage()">
 	<div class="container">
 	<div class="containerdiv">
 		<div id="particles-js"></div>
@@ -267,5 +267,10 @@
   
         <script type="text/javascript" src="assets/js/particles.js"></script>
         <script type="text/javascript" src="assets/js/app.js"></script>
+        <script type="text/javascript">
+          function winmessage() {
+    alert("Thanks Everyone for participating! This is to inform you that we have got the list of Top 10 participants and these people will be sent a mail regarding the direct interview. Although you can still play the game for fun and to challenge your skills. For any queries or feedback please drop a message on IEEE Student Branch Manipal FB page, Aloha!");
+}
+        </script>
 </body>
 </html>
